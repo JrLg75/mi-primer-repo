@@ -1,8 +1,9 @@
 name: Correccion de Errores
-on: push
+on: [push]
+
 jobs:
-mi_job:
-runs-on: ubuntu-latest
-steps:
-- name: Saludo
-run: echo "Hola"
+  mi_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Saludo
+        run: echo "Hola"
