@@ -1,0 +1,17 @@
+name: Actividad 3 - CI Basico
+
+# Se dispara automáticamente ante un push a la rama main
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  integracion_continua:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Simular descarga de dependencias
+        run: echo "Instalando paquetes y dependencias..."
+
+      - name: Simular ejecución de pruebas unitarias
+        run: echo "Ejecutando tests... ¡Todos los tests pasaron con éxito!"

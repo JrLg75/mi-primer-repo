@@ -1,0 +1,25 @@
+name: Actividad 2 - Validacion de Archivos
+
+on:
+  workflow_dispatch:
+
+jobs:
+  verificar_repositorio:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Paso crucial: Clonar el código para poder leer los archivos
+      - name: Clonar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Listar archivos del proyecto
+        run: ls -la
+
+      - name: Verificar si existe README.md
+        run: |
+          if [ -f "README.md" ]; then
+            echo "✅ El archivo README.md existe."
+          else
+            echo "❌ ERROR: Falta el archivo README.md en la raíz del proyecto."
+            exit 1
+          fi
